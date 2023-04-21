@@ -10,11 +10,38 @@ function renderLicenseLink(license) {}
 // If there is no license, return an empty string
 function renderLicenseSection(license) {}
 
+const generateReadMe = ({ username, email, title, description, installation, usage, contribution, test, license }) => 
+{return `# ${data.title}
+
+## Description
+${data.description}
+
+## Table of Contents
+
+## Installation
+${data.installation}
+
+## Usage
+${data.usage}
+
+## Contributing
+${data.contribution}
+
+## Tests
+${data.test}
+
+## Questions
+${data.username}
+
+For additional questions, please reach out to me at : ${data.email}
+
+`}
 // TODO: Create a function to generate markdown for README
-function generateMarkdown(data) {
-  return `# ${data.title}
+// function generateMarkdown(data) {
+//   return `# ${data.title}
 
-`;
-}
+// `;
+// }
 
-module.exports = generateMarkdown;
+//module.exports = generateMarkdown;
+module.exports = generateReadMe;

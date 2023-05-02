@@ -1,6 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
+const generateReadMe = require('./utils/generateMarkdown');
 //attach generatemarkdownjs/generatereadme function???
  
 
@@ -51,9 +52,10 @@ const promptUser = ()=>{
             message: 'What are the testing instructions for your project?',
         },
         {
-            type: '',
+            type: 'list',
             name: 'license',
             message: 'Choose a license for your project',
+            choices: ['MIT', 'APACHE2.0', 'GLP3.0', 'BSD3', 'NONE']
         },
     ])
 
@@ -63,16 +65,5 @@ const promptUser = ()=>{
 
     fs.writeFile('ReadMe.md', readMe, (err) => err? console.log(err) : console.log('Created ReadMe!') )
 });
-
-// function writeToFile(fileName, data) {
-
-// }
-
-// TODO: Create a function to initialize app
-function init() {
-    promptUser();
-}
-
-// Function call to initialize app
-init();
 };
+promptUser();
